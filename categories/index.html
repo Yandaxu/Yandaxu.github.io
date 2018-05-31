@@ -83,13 +83,14 @@
 
 <meta name="description" content="Learning makes me happy.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Daxu | Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:title" content="All categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
 <meta property="og:site_name" content="Daxu | Blog">
 <meta property="og:description" content="Learning makes me happy.">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-31T06:44:25.263Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Daxu | Blog">
+<meta name="twitter:title" content="All categories">
 <meta name="twitter:description" content="Learning makes me happy.">
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/categories/"/>
 
 
 
 
 
-  <title>Daxu | Blog</title>
+  <title>All categories | Daxu | Blog</title>
   
 
 
@@ -145,8 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -239,145 +239,44 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/31/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Daxu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/20169500.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Daxu | Blog">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/31/hello-world/" itemprop="url">Windows —— 环境搭建</a></h1>
-        
+	<h1 class="post-title" itemprop="name headline">All categories</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <div class="category-all-page">
+            <div class="category-all-title">
+                暂无分类
+            </div>
+            <div class="category-all">
               
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T15:37:57+08:00">
-                2018-05-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/31/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/05/31/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+            </div>
+          </div>
         
-          
-            <p>工欲善其事必先利其器，环境搭建是第一步。</p>
-<h2 id="集成环境搭建"><a href="#集成环境搭建" class="headerlink" title="集成环境搭建"></a>集成环境搭建</h2><h3 id="下载并安装-wamp"><a href="#下载并安装-wamp" class="headerlink" title="下载并安装 wamp"></a>下载并安装 <a href="http://www.wampserver.com/en/" target="_blank" rel="noopener">wamp</a></h3><h4 id="修改文件-httpd-conf"><a href="#修改文件-httpd-conf" class="headerlink" title="修改文件 httpd.conf"></a>修改文件 httpd.conf</h4><h5 id="1-对应你所用的端口号（默认：80端口）"><a href="#1-对应你所用的端口号（默认：80端口）" class="headerlink" title="1.对应你所用的端口号（默认：80端口）"></a>1.对应你所用的端口号（默认：80端口）</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Listen 0.0.0.0:80</span><br><span class="line">Listen [::0]:80</span><br></pre></td></tr></table></figure>
-<h5 id="2-修改访问许可"><a href="#2-修改访问许可" class="headerlink" title="2.修改访问许可"></a>2.修改访问许可</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AllowOverride All</span><br></pre></td></tr></table></figure>
-<h4 id="将wamp中的PHP设置为需要使用的版本，并添加至系统的环境变量中。环境变量设置地址为-我的电脑-》属性-》高级系统设置-》环境变量-》系统变量-》Path"><a href="#将wamp中的PHP设置为需要使用的版本，并添加至系统的环境变量中。环境变量设置地址为-我的电脑-》属性-》高级系统设置-》环境变量-》系统变量-》Path" class="headerlink" title="将wamp中的PHP设置为需要使用的版本，并添加至系统的环境变量中。环境变量设置地址为 我的电脑=》属性=》高级系统设置=》环境变量=》系统变量=》Path"></a>将<a href="http://www.wampserver.com/en/" target="_blank" rel="noopener">wamp</a>中的PHP设置为需要使用的版本，并添加至系统的环境变量中。环境变量设置地址为 我的电脑=》属性=》高级系统设置=》环境变量=》系统变量=》Path</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~\wamp\bin\php\php*</span><br></pre></td></tr></table></figure>
-<h4 id="安装composer-打开cmd"><a href="#安装composer-打开cmd" class="headerlink" title="安装composer, 打开cmd"></a>安装<a href="http://docs.phpcomposer.com/00-intro.html" target="_blank" rel="noopener">composer</a>, 打开cmd</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\username&gt;<span class="built_in">cd</span> C:\bin</span><br><span class="line">C:\bin&gt;php -r <span class="string">"readfile('https://getcomposer.org/installer');"</span> | php</span><br><span class="line">C:\Users\username&gt;composer -V</span><br></pre></td></tr></table></figure>
-
-          
-        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -385,6 +284,17 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div class="ds-thread" data-thread-key="categories/index.html"
+           data-title="All categories" data-url="http://yoursite.com/categories/index.html">
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -609,6 +519,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
