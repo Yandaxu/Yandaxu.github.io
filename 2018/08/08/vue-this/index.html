@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="环境搭建," />
+  <meta name="keywords" content="深入理解," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。 安装node.js建议 node 6.10.0，npm 3.10.0 以上">
-<meta name="keywords" content="环境搭建">
+<meta name="description" content="这是vue文档里的原话：All lifecycle hooks are called with their ‘this’ context pointing to the Vue instance invoking it.意思是：在Vue所有的生命周期钩子方法（如created，mounted， updated以及destroyed）里使用this，this指向调用它的Vue实例。 示例123456">
+<meta name="keywords" content="深入理解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows —— vue 环境搭建">
-<meta property="og:url" content="http://yoursite.com/2018/05/31/vue/index.html">
+<meta property="og:title" content="Vue实例里this的使用">
+<meta property="og:url" content="http://yoursite.com/2018/08/08/vue-this/index.html">
 <meta property="og:site_name" content="Daxu | Blog">
-<meta property="og:description" content="Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。 安装node.js建议 node 6.10.0，npm 3.10.0 以上">
+<meta property="og:description" content="这是vue文档里的原话：All lifecycle hooks are called with their ‘this’ context pointing to the Vue instance invoking it.意思是：在Vue所有的生命周期钩子方法（如created，mounted， updated以及destroyed）里使用this，this指向调用它的Vue实例。 示例123456">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-31T09:11:00.314Z">
+<meta property="og:updated_time" content="2018-08-08T07:40:26.339Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows —— vue 环境搭建">
-<meta name="twitter:description" content="Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。 安装node.js建议 node 6.10.0，npm 3.10.0 以上">
+<meta name="twitter:title" content="Vue实例里this的使用">
+<meta name="twitter:description" content="这是vue文档里的原话：All lifecycle hooks are called with their ‘this’ context pointing to the Vue instance invoking it.意思是：在Vue所有的生命周期钩子方法（如created，mounted， updated以及destroyed）里使用this，this指向调用它的Vue实例。 示例123456">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/31/vue/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/08/vue-this/"/>
 
 
 
 
 
-  <title>Windows —— vue 环境搭建 | Daxu | Blog</title>
+  <title>Vue实例里this的使用 | Daxu | Blog</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/31/vue/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/08/vue-this/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daxu">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Windows —— vue 环境搭建</h1>
+          <h1 class="post-title" itemprop="name headline">Vue实例里this的使用</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T16:13:44+08:00">
-                2018-05-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T16:13:44+08:00">
+                2018-08-08
               </time>
             
 
@@ -325,8 +325,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/31/vue/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/05/31/vue/" itemprop="commentCount"></span>
+                <a href="/2018/08/08/vue-this/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/08/08/vue-this/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -354,14 +354,19 @@
       
 
       
-        <p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
-<h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">node.js</a></h2><p>建议 node 6.10.0，npm 3.10.0 以上版本</p>
-<h2 id="安装vue-js"><a href="#安装vue-js" class="headerlink" title="安装vue.js"></a>安装<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">vue.js</a></h2><h4 id="1-由于外网太慢，或者资源被墙，建议使用淘宝镜像。"><a href="#1-由于外网太慢，或者资源被墙，建议使用淘宝镜像。" class="headerlink" title="1.由于外网太慢，或者资源被墙，建议使用淘宝镜像。"></a>1.由于外网太慢，或者资源被墙，建议使用淘宝镜像。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<h4 id="2-安装vue的脚手架。"><a href="#2-安装vue的脚手架。" class="headerlink" title="2.安装vue的脚手架。"></a>2.安装vue的脚手架。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-cli -g</span><br></pre></td></tr></table></figure>
-<h4 id="3-初始化vue项目"><a href="#3-初始化vue项目" class="headerlink" title="3.初始化vue项目"></a>3.初始化vue项目</h4><p>可以一直按回车，可选择性安装 Esint(代码格式)，vue-router(路由)，e2e-test(单元测试工具)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack vue-demo</span><br></pre></td></tr></table></figure></p>
-<h4 id="4-进入项目"><a href="#4-进入项目" class="headerlink" title="4.进入项目"></a>4.进入项目</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> vue-demo</span><br></pre></td></tr></table></figure>
-<h4 id="5-安装库文件"><a href="#5-安装库文件" class="headerlink" title="5.安装库文件"></a>5.安装库文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<h4 id="6-运行项目"><a href="#6-运行项目" class="headerlink" title="6.运行项目"></a>6.运行项目</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+        <h3 id="这是vue文档里的原话："><a href="#这是vue文档里的原话：" class="headerlink" title="这是vue文档里的原话："></a>这是vue文档里的原话：</h3><p>All lifecycle hooks are called with their ‘this’ context pointing to the Vue instance invoking it.<br>意思是：在Vue所有的生命周期钩子方法（如created，mounted， updated以及destroyed）里使用this，this指向调用它的Vue实例。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;script src=<span class="string">"http://libs.baidu.com/jquery/2.0.0/jquery.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=<span class="string">"https://unpkg.com/vue@2.5.9/dist/vue.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;div id=<span class="string">"app"</span> style=<span class="string">"width: 100%;height: auto;font-size:20px;"</span>&gt;</span><br><span class="line">    &lt;p id=<span class="string">"id1"</span>&gt;&lt;/p&gt;</span><br><span class="line">    &lt;p id=<span class="string">"id2"</span>&gt;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    var message = <span class="string">"Hello!"</span>;</span><br><span class="line">    var app = new Vue(&#123;</span><br><span class="line">        el:<span class="string">"#app"</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            message: <span class="string">"你好！"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        created: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">          this.showMessage1();    //this 1</span><br><span class="line">          this.showMessage2();   //this 2</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            showMessage1:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                setTimeout(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">                   document.getElementById(<span class="string">"id1"</span>).innerText = this.message;  //this 3</span><br><span class="line">                &#125;, 10)</span><br><span class="line">            &#125;,</span><br><span class="line">            showMessage2:<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">                setTimeout(() =&gt; &#123;</span><br><span class="line">                   document.getElementById(<span class="string">"id2"</span>).innerText = this.message;  //this 4</span><br><span class="line">                &#125;, 10)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>示例定义了两个message。一个是全局变量，即window.message，它的值为英文“Hello!”。另外一个是vue实例的数据message，它的值为中文的“你好！”。<br>运行示例，在浏览器得到：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hellow!</span><br><span class="line">你好！</span><br></pre></td></tr></table></figure></p>
+<p>第一个输出英文”Hello!”，第二个输出中文“你好！”。这说明了showMessage1()里的this指的是window，而showMessage2()里的this指的是vue实例。</p>
+<p>####created</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">created: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  this.showMessage1();    //this 1</span><br><span class="line">  this.showMessage2();   //this 2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>created函数为vue实例的钩子方法，它里面使用的this指的是vue实例。</p>
+<p>####showMessage1()</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">showMessage1:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">       document.getElementById(<span class="string">"id1"</span>).innerText = this.message;  //this 3</span><br><span class="line">    &#125;, 10)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于普通函数（包括匿名函数），this指的是直接的调用者，在非严格模式下，如果没有直接调用者，this指的是window。showMessage1()里setTimeout使用了匿名函数，this指向window。<br>绑定vue实例到this的方法<br>为了避免this指向出现歧义，有两种方法绑定this<br>1.使用bind<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">showMessage1()可以改为：</span><br><span class="line"></span><br><span class="line">showMessage1:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">       document.getElementById(<span class="string">"id1"</span>).innerText = this.message;  //this 3</span><br><span class="line">    &#125;.<span class="built_in">bind</span>(this), 10)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2.对setTimeout()里的匿名函数使用bind()绑定到vue实例的this。这样在匿名函数内的this也为vue实例。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">showMessage1:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    var self = this;</span><br><span class="line">    setTimeout(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">       document.getElementById(<span class="string">"id1"</span>).innerText = self.message;  //改为self</span><br><span class="line">    &#125;.<span class="built_in">bind</span>(this), 10)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里将表示vue实例的this赋值给变量self。在使用到this的地方改用self引用。</p>
 
       
     </div>
@@ -379,7 +384,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/环境搭建/" rel="tag"># 环境搭建</a>
+            <a href="/tags/深入理解/" rel="tag"># 深入理解</a>
           
         </div>
       
@@ -407,15 +412,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/06/13/hello-world/" rel="next" title="Windows —— 环境搭建">
+                <i class="fa fa-chevron-left"></i> Windows —— 环境搭建
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/13/hello-world/" rel="prev" title="Windows —— 环境搭建">
-                Windows —— 环境搭建 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -446,8 +451,8 @@
 
   
     <div class="comments" id="comments">
-      <div class="ds-thread" data-thread-key="2018/05/31/vue/"
-           data-title="Windows —— vue 环境搭建" data-url="http://yoursite.com/2018/05/31/vue/">
+      <div class="ds-thread" data-thread-key="2018/08/08/vue-this/"
+           data-title="Vue实例里this的使用" data-url="http://yoursite.com/2018/08/08/vue-this/">
       </div>
     </div>
 
@@ -581,7 +586,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装node-js"><span class="nav-number">1.</span> <span class="nav-text">安装node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装vue-js"><span class="nav-number">2.</span> <span class="nav-text">安装vue.js</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-由于外网太慢，或者资源被墙，建议使用淘宝镜像。"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.由于外网太慢，或者资源被墙，建议使用淘宝镜像。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安装vue的脚手架。"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.安装vue的脚手架。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-初始化vue项目"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.初始化vue项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-进入项目"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.进入项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-安装库文件"><span class="nav-number">2.0.5.</span> <span class="nav-text">5.安装库文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-运行项目"><span class="nav-number">2.0.6.</span> <span class="nav-text">6.运行项目</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#这是vue文档里的原话："><span class="nav-number">1.</span> <span class="nav-text">这是vue文档里的原话：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">2.</span> <span class="nav-text">示例</span></a></li></ol></div>
             
 
           </div>
